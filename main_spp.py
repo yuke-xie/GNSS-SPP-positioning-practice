@@ -38,9 +38,9 @@ def SellectSystem(all_sat, system):
 
 if __name__ == '__main__':
     # load observation
-    # obs = gr.load('INSA002mA.21o')
-    # pickle.dump(obs, open('INSA002mA_21o_temp.txt', 'wb'))
-    obs = pickle.load(open('INSA003mA_21o_temp.txt', 'rb'))
+    # obs = gr.load('data/INSA002mA.21o')
+    # pickle.dump(obs, open('data/INSA002mA_21o_temp.txt', 'wb'))
+    obs = pickle.load(open('data/INSA003mA_21o_temp.txt', 'rb'))
     # print('finished')
     # end = time.clock()
     # print(end - start)
@@ -50,7 +50,7 @@ if __name__ == '__main__':
     print(epoch_first)
     epoch_last = str(np.array(obs.time[-1]))[0:19]
     print(epoch_last)
-    eph = gr.load('INSA003mA.21m', tlim=[epoch_first, epoch_last])
+    eph = gr.load('data/INSA003mA.21m', tlim=[epoch_first, epoch_last])
 
     # list all available satellites
     GPS = SellectSystem(eph.sv, 'GPS')
